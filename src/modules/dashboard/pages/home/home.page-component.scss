@@ -1,0 +1,45 @@
+:host {
+  flex: 1 1 auto;
+  max-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  mat-toolbar {
+    flex: 0 0 auto;
+  }
+
+  .dashboard-container {
+    flex: 1 1 90vh;
+    max-height: 90vh;
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+    grid-template-rows: 30vh 40vh 30vh;
+
+    grid-template-areas: 'pos1 . bin1'
+      '. chart .'
+      'pos2 control bin2';
+  }
+
+}
+
+#throw {
+  grid-area: control;
+}
+
+#pos-1 {
+  grid-area: pos1;
+}
+#pos-2 {
+  grid-area: pos2;
+}
+#bin-1 {
+  grid-area: bin1;
+}
+#bin-2 {
+  grid-area: bin2;
+}
+#chart {
+  grid-area: chart;
+  align-self: stretch;
+  justify-self: stretch;
+}

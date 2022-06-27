@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { DishService } from '@modules/shared/services/dish.service';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent  {
 
-  constructor() { }
+  constructor(
+    private dishService: DishService
+  ) { }
+
+  public start(): void {
+    this.dishService.init();
+  }
 
 }

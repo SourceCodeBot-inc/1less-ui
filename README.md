@@ -2,26 +2,31 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
-## Development server
+## how to start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+just by typing `npm start` into the cli or open it via IDE.
 
-## Code scaffolding
+### Prepration
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+first of all it required an installation of all required node_modules by `npm i`.
 
-## Build
+## Status of that Project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### what we did
 
-## Running unit tests
+1. simple interaction via an UI made with angular and material design
+2. simple chart which currently use randomized data to visualize the result
+3. 2 PoS instances and 2 smart bins simulated in the UI
+4. 1 Control plane where you can choose where to sold dish goes into a bin
+5. with `+` at the top bar you can generate more dishes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### what's TODO
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. the dish washing action at a bin is not implemented
+2. Event log may can be optimized
+3. PoS and Bins can't managed at the moment
+4. for simulation purpose it's necessary to define a loop which run in an interval for example which handle
+   1. creation and deletion of items
+   2. selling dishes at different PoS's
+   3. washing dishes in a batch process (how many dishes can be wash at once per machine?)
+5. also how is the way from bin to wash to PoS returning

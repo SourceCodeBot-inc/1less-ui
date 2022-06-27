@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat.core();
+
+// Define the default theme (same as the example above).
+$project-app-primary: mat.define-palette(mat.$indigo-palette);
+$project-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$project-app-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $project-app-primary,
+        accent: $project-app-accent,
+      ),
+    )
+);
+
+// Define an alternate dark theme.
+$dark-primary: mat.define-palette(mat.$blue-grey-palette);
+$dark-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$dark-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $dark-primary,
+        accent: $dark-accent,
+        warn: $dark-warn,
+      ),
+    )
+);
+
+@media (prefers-color-scheme: dark) {
+  @include mat.all-component-themes($dark-theme);
+}
+
+@media (prefers-color-scheme: light) {
+  @include mat.all-component-themes($project-app-theme);
+}
+
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}

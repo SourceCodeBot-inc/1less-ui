@@ -1,0 +1,9 @@
+<h2>{{label}} <mat-icon>store</mat-icon></h2>
+<div class="dishes mat-evaluation-z2" *ngIf="dishes$ | async as dishes">
+  <div class="dish-item" *ngFor="let dish of dishes; trackBy: dishTrackBy">
+    <mat-icon>{{dish.type | icon}}</mat-icon>
+    <button mat-mini-fab (click)="sellDish(dish.id)">
+      <mat-icon>sell</mat-icon>
+    </button>
+  </div>
+</div>

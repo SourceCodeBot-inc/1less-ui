@@ -1,6 +1,9 @@
 :host {
-  flex: 1 1 100%;
   display: flex;
+  flex: 1 1 100%;
   flex-direction: column;
-  justify-content: stretch;
+
+  .dishes {
+    flex: 1;
+  }
 }

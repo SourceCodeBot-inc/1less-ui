@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-import * as PlotlyJS from 'plotly.js-dist-min';
-import { PlotlyModule } from 'angular-plotly.js';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardModule } from '@modules/dashboard/dashboard.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-PlotlyModule.plotlyjs = PlotlyJS;
+import { SharedModule } from '@modules/shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ PlotlyModule.plotlyjs = PlotlyJS;
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PlotlyModule
+    BrowserAnimationsModule,
+    DashboardModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

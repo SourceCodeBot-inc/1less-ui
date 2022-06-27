@@ -1,1 +1,18 @@
-<p>home works!</p>
+<mat-toolbar>
+  <h2>Home</h2>
+  <button mat-flat-button (click)="start()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <app-point-of-sell [id]="'1'" [label]="'MC Donalds'" [attr.id]="'pos-1'"></app-point-of-sell>
+  <app-point-of-sell [id]="'2'" [label]="'Burger King'" [attr.id]="'pos-2'"></app-point-of-sell>
+
+  <app-plotly-example></app-plotly-example>
+
+  <app-throw-control [id]="'throw'"></app-throw-control>
+
+  <app-smart-bin [id]="'1'" [attr.id]="'bin-1'" [label]="'1Less V1'"></app-smart-bin>
+  <app-smart-bin [id]="'2'" [attr.id]="'bin-2'" [label]="'1Less V1.1'"></app-smart-bin>
+</div>

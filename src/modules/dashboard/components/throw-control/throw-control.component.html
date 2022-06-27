@@ -1,0 +1,12 @@
+<h2>In hands of persons</h2>
+<div class="dishes" *ngIf="dishes$ | async as dishes">
+  <div class="dish-item" *ngFor="let dish of dishes; trackBy: dishTrackBy">
+    <mat-icon>{{ dish.type | icon }}</mat-icon>
+    <button (click)="recycling(dish.id)" mat-mini-fab>
+      <mat-icon>recycling</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+
